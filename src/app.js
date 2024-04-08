@@ -16,9 +16,11 @@ window.onload = () => {
     if (selectedSuit === "♥" || selectedSuit === "♦") {
     topSuitElement.style.color = "red";
     bottomSuitElement.style.color = "red";
+    cardNumberElement.style.color = "red";
     } else {
     topSuitElement.style.color = "black";
     bottomSuitElement.style.color = "black";
+    cardNumberElement.style.color = "black";
      }
     bottomSuitElement.style.transform = "rotate(180deg)";
     
