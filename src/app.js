@@ -24,8 +24,8 @@ window.onload = () => {
     
   }
   function changeNumber () {
-    let figures = ["J", "Q", "K"];
-    const randomNumber = () => Math.floor(Math.random() * 10) + 1;
+    let figures = ["A", "J", "Q", "K"];
+    const randomNumber = () => Math.floor(Math.random() * 9) + 2;
     const randomFigures = () => figures[Math.floor(Math.random() * figures.length)];
 
     let changedCardNumber = Math.random() < 0.5 ? randomNumber() : randomFigures();
