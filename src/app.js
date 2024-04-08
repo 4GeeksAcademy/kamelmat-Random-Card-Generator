@@ -31,8 +31,36 @@ let cardNumberElement = document.querySelector(".number")
     let changedCardNumber = Math.random() < 0.5 ? randomNumber() : randomFigures();
     cardNumberElement.innerHTML = changedCardNumber;
   }
-  
+
+  let timeLeft = 10;
+
+  function countdown() {
+    timeLeft--;
+    document.getElementById("seconds").innerHTML = String( timeLeft );
+    if (timeLeft > 0) {
+      setTimeout(countdown, 1000);
+    }
+  };
+
+  setTimeout(countdown, 1000);
+  function startTimer() {
+  let seconds = 10;
+  const timerElement = document.querySelector("#seconds");
+
+  const timerInterval = setInterval(() => {
+    if (seconds === 0) {
+      clearInterval(timerInterval);
+      changeSuit();
+      changeNumber();
+      startTimer();
+    } else {
+      timerElement.textContent = seconds;
+      seconds--;
+    }
+  }, 1000);
+  }
 window.onload = () => {
+  startTimer();
   document.querySelector(".card").addEventListener("click", () => {
     changeSuit();
     changeNumber();
@@ -43,5 +71,3 @@ window.onload = () => {
     changeNumber();
   });
 };
-  
-/* }; */
