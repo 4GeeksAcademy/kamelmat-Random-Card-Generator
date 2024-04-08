@@ -2,10 +2,37 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+let suits = ["♥", "♠", "♣", "♦"];
+let topSuitElement = document.querySelector(".top-suit");
+let bottomSuitElement = document.querySelector(".bottom-suit");
+let cardNumberElement = document.querySelector(".number")
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+
+window.onload = () => {
+  function changeSuit() {
+    let randomIndex = Math.floor(Math.random() * suits.length);
+    let selectedSuit = suits[randomIndex];
+    topSuitElement.innerHTML = bottomSuitElement.innerHTML = suits[randomIndex];
+    if (selectedSuit === "♥" || selectedSuit === "♦") {
+    topSuitElement.style.color = "red";
+    bottomSuitElement.style.color = "red";
+    } else {
+    topSuitElement.style.color = "black";
+    bottomSuitElement.style.color = "black";
+     }
+    bottomSuitElement.style.transform = "rotate(180deg)";
+    
+  }
+  function changeNumber () {
+    let figures = ["J", "Q", "K"];
+    const randomNumber = () => Math.floor(Math.random() * 10) + 1;
+    const randomFigures = () => figures[Math.floor(Math.random() * figures.length)];
+
+    let changedCardNumber = Math.random() < 0.5 ? randomNumber() : randomFigures();
+    cardNumberElement.innerHTML = changedCardNumber;
+  }
+  document.querySelector(".card").addEventListener("click", () => {
+    changeSuit();
+    changeNumber();
+  });
 };
