@@ -9,18 +9,20 @@ let cardNumberElement = document.querySelector(".number")
 
 
 /* window.onload = () => { */
-  function changeSuit() {
-    let randomIndex = Math.floor(Math.random() * suits.length);
-    let selectedSuit = suits[randomIndex];
-    topSuitElement.innerHTML = bottomSuitElement.innerHTML = suits[randomIndex];
-    if (selectedSuit === "♥" || selectedSuit === "♦") {
-    topSuitElement.style.color = "red";
-    bottomSuitElement.style.color = "red";
-    } else {
-    topSuitElement.style.color = "black";
-    bottomSuitElement.style.color = "black";
-     }
-    bottomSuitElement.style.transform = "rotate(180deg)";
+function changeSuit() {
+  let randomIndex = Math.floor(Math.random() * suits.length);
+  let selectedSuit = suits[randomIndex];
+  topSuitElement.innerHTML = bottomSuitElement.innerHTML = suits[randomIndex];
+  if (selectedSuit === "♥" || selectedSuit === "♦") {
+  topSuitElement.style.color = "red";
+  bottomSuitElement.style.color = "red";
+  cardNumberElement.style.color = "red";
+  } else {
+  topSuitElement.style.color = "black";
+  bottomSuitElement.style.color = "black";
+  cardNumberElement.style.color = "black";
+   }
+  bottomSuitElement.style.transform = "rotate(180deg)";
     
   }
   function changeNumber () {
