@@ -9,6 +9,9 @@ let cardNumberElement = document.querySelector(".number")
 
 
 window.onload = () => {
+  changeSuit();
+  changeNumber();
+};
   function changeSuit() {
     let randomIndex = Math.floor(Math.random() * suits.length);
     let selectedSuit = suits[randomIndex];
@@ -33,8 +36,3 @@ window.onload = () => {
     let changedCardNumber = Math.random() < 0.5 ? randomNumber() : randomFigures();
     cardNumberElement.innerHTML = changedCardNumber;
   }
-  document.querySelector(".card").addEventListener("click", () => {
-    changeSuit();
-    changeNumber();
-  });
-};
