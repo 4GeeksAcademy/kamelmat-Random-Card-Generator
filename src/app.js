@@ -9,7 +9,7 @@ let cardNumberElement = document.querySelector(".number")
 
 window.onload = () => {
   startTimer();
-  document.querySelector(".card").addEventListener("click", () => {
+  document.getElementById("generateCardBtn").addEventListener("click", () => {
     changeSuit();
     changeNumber();
   });
