@@ -7,8 +7,14 @@ let topSuitElement = document.querySelector(".top-suit");
 let bottomSuitElement = document.querySelector(".bottom-suit");
 let cardNumberElement = document.querySelector(".number")
 
+window.onload = () => {
+  startTimer();
+  document.querySelector(".card").addEventListener("click", () => {
+    changeSuit();
+    changeNumber();
+  });
+};
 
-/* window.onload = () => { */
 function changeSuit() {
   let randomIndex = Math.floor(Math.random() * suits.length);
   let selectedSuit = suits[randomIndex];
@@ -61,15 +67,4 @@ function changeSuit() {
     }
   }, 1000);
   }
-window.onload = () => {
-  startTimer();
-  document.querySelector(".card").addEventListener("click", () => {
-    changeSuit();
-    changeNumber();
-  });
 
-  document.getElementById("generateCardBtn").addEventListener("click", () => {
-    changeSuit();
-    changeNumber();
-  });
-};
