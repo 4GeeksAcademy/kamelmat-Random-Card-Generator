@@ -7,7 +7,6 @@ let topSuitElement = document.querySelector(".top-suit");
 let bottomSuitElement = document.querySelector(".bottom-suit");
 let cardNumberElement = document.querySelector(".number")
 
-
 window.onload = () => {
   changeSuit();
   changeNumber();
